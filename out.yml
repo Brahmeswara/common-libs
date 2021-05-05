@@ -1,0 +1,15 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Docudata Base Platform
+Transform:
+- AWS::Serverless-2016-10-31
+Resources:
+  CommonLibsLayer:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      LayerName: common-nodejs-libs-1
+      Description: Dependencies for sam app [temp-units-conv]
+      ContentUri: s3://docudata-be-sam-deploy-bucket/0ae3cfb220b9012dff085a96e67ad6fb
+      CompatibleRuntimes:
+      - nodejs14.x
+      LicenseInfo: MIT
+      RetentionPolicy: Retain
