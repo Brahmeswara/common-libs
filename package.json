@@ -1,5 +1,5 @@
 {
-    "name": "Docudata Common nodejs libraries",
+    "name": "common-libs",
     "description": "docudata lambda common layers consisting of node modules",
     "version": "1.0.0",
     "dependencies": {
