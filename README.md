@@ -15,12 +15,12 @@ S3 bucket as needed.
 
 Execute the the following to have the layer code built.
 
-    npm run build:production
+    npm run build-production
 
 ## Step 2: Deploying to AWS
 
 Execute the following to have he layer deployed in AWS Lambda.
 
-    npm run aws:deploy
+    npm run aws-deploy
 
 Refer to the package.json for details on how the above commands are setup. 

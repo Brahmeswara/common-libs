@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: 2010-09-09
-Description: Docudata Base Platform
+Description: Docudata Base Platform common nodejs libraries layer
 Transform:
 - AWS::Serverless-2016-10-31
 Resources:
@@ -8,7 +8,7 @@ Resources:
     Properties:
       LayerName: common-nodejs-libs-1
       Description: Dependencies for sam app [temp-units-conv]
-      ContentUri: s3://docudata-be-sam-deploy-bucket/0ae3cfb220b9012dff085a96e67ad6fb
+      ContentUri: s3://docudata-be-sam-deploy-bucket/86bf7aadff8079b7406e327165e16bb0
       CompatibleRuntimes:
       - nodejs14.x
       LicenseInfo: MIT

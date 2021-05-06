@@ -3,19 +3,22 @@
     "description": "docudata lambda common layers consisting of node modules",
     "version": "1.0.0",
     "dependencies": {
+        "@mapbox/node-pre-gyp": "^1.0.4",
         "@middy/core": "^2.0.0",
         "@middy/http-cors": "^2.0.0",
         "@middy/http-error-handler": "^2.0.0",
         "@middy/http-event-normalizer": "^2.0.0",
         "@middy/http-header-normalizer": "^2.0.0",
         "@middy/http-json-body-parser": "^2.0.0",
+        "@middy/http-urlencode-path-parser": "^2.2.0",
         "@middy/validator": "^2.0.0",
         "aws-lambda": "^1.0.6",
         "aws-sdk": "^2.892.0",
-        "bottlejs": "^2.0.0"
+        "bottlejs": "^2.0.0",
+        "cairo": "*",
+        "canvas": "^2.7.0"
     },
     "devDependencies": {
-        "@types/aws-lambda": "^8.10.75",
         "@types/aws-sdk": "^2.7.0",
         "@types/chai": "^4.2.16",
         "@types/mocha": "^8.2.2",
@@ -30,9 +33,9 @@
     "scripts": {
         "co:login": "aws codeartifact login --tool npm --repository docudata --domain docudata",
         "prepare": "npm run co:login",
-        "build:dev": "npm run prepare && npm install",
-        "build:layer": "git-bash.exe  build.bash",
-        "build:production": "npm run prepare && npm install --production && npm run build:layer",
+        "build-dev": "npm run prepare && npm install",
+        "build-layer": "git-bash.exe  build.bash",
+        "build-production": "npm run prepare && npm install --production && npm run build-layer",
         "sam-package": "sam package --template-file template.yml --s3-bucket docudata-be-sam-deploy-bucket --output-template-file out.yml",
         "sam-deploy": "sam deploy --template-file ./out.yml --stack-name docudata-be-lambda-layer-nodejs-libs-stack --capabilities CAPABILITY_AUTO_EXPAND CAPABILITY_NAMED_IAM",
         "aws:deploy": "npm run sam-package && npm run sam-deploy"
